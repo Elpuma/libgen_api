@@ -7,12 +7,25 @@ Gem::Specification.new do |spec|
   spec.name          = "libgen_api"
   spec.version       = LibgenApi::VERSION
   spec.authors       = ["Sag0Sag0"]
-  spec.email         = ["fake.email@fake.org"]
+  spec.email         = ["Sag0Sag0@outlook.com"]
 
   spec.summary       = "An API that can be used to search Library Genesis"
   spec.description   = "An API that can be used to search Library Genesis. In the early stages."
   spec.homepage      = "https://github.com/Sag0Sag0/libgen_api"
   spec.license       = "MIT"
+
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  if spec.respond_to?(:metadata)
+    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+
+    spec.metadata["homepage_uri"] = spec.homepage
+    spec.metadata["source_code_uri"] = "https://github.com/Sag0Sag0/libgen_api"
+    spec.metadata["changelog_uri"] = "https://github.com/Sag0Sag0/libgen_api/CHANGELOG.md"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against " \
+      "public gem pushes."
+  end
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
