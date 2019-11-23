@@ -10,7 +10,7 @@ module LibgenApi
 
     @mirror = 'libgen.is'
 
-    # Result is the same order as search resualts.
+    # Results are in the same order as search results.
     def self.get_ids(page)
         books = []
 
@@ -48,15 +48,29 @@ module LibgenApi
     def self.search(query, res, column)
         raise "query must be at least four characters long!" if query.length() < 4
 
-        # Important view detailed so that we get the ID's
-        url = "http://#{@mirror}/search.php?req=#{query}&lg_topic=libgen&open=0&view=detailed&res=#{25}&column=#{column}"
-        response = HTTParty.get(url)
+        if res != 10 && res != 25 && res != 100
+            raise "res must equal either 10, 25 or 100"
+        end
+        
+        id_collection = []
+        page = 1
+        loop do
+            url = "http://#{@mirror}/search.php?req=#{query}&lg_topic=libgen&open=0&view=detailed&res=#{res}&column=#{column}&page=#{page}"
+            response = HTTParty.get(url)
 
-        # Grab main table with Nokogiri
-        doc = Nokogiri::HTML(response.body)
+            doc = Nokogiri::HTML(response.body)
+            page_ids = get_ids(doc)
 
-        # Grab all the books in this pages IDs.
-        ids = get_ids(doc)
+            id_collection = id_collection + page_ids
+
+            if page_ids.length() != res
+                break
+            end
+
+            page += 1
+        end
+
+        id_collection
     end
 
     def self.get_book(id, fields=["Title", "Author", "MD5"])
@@ -77,7 +91,6 @@ module LibgenApi
 
         res = HTTParty.get("http://#{@mirror}/json.php?ids=#{ids}&fields=#{fields}")
 
-        puts "http://#{@mirror}/json.php?ids=#{ids}&fields=#{fields}"
         begin
             JSON.parse(res.body)
         rescue JSON::ParserError, TypeError => e

@@ -13,7 +13,7 @@ class DmpTest < Minitest::Test
     end
 
     def test_basic_search
-        @@dodo_results = LibgenApi.search("dodo")
+        @@dodo_results = LibgenApi.search('dodo', 25, 'def')
     end
 
     def test_get_book

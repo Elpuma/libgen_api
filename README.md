@@ -28,16 +28,16 @@ Or install it yourself as:
     $ gem install libgen_api
 
 ## Usage
-### Searching
+### Searching the site
 The main search method is called `search()` and has three options.
 
 The first is `query` and is set to the value of the search you want to make.
 The second is `res` and is set to the amount of results you want to recieve per page. The values you can give here are 10, 25 or 100.
-The final option is `column` and is which column you want to search. The values this can have are 'def'(if unsure use this one), 'title', 'author', 'series', 'publisher', 'year', 'identifier', 'language', 'md5', 'tags' and 'extension'.
+The final option is `column` and is which column you want to search. The values this can have are `def`(if unsure use this one), `title`, `author`, `series`, `publisher`, `year`, `identifier`, `language`, `md5`, `tags` and `extension`.
 
 This method will return in order the id's of the books shown in your search results.
 
-### Retrieving
+### Retrieving books
 Books can be retrieved using their id's.
 
 The method `get_book()` can be used to retrieve an individual books information where as the method `get_books()` can be used to retrieve multiple books.
@@ -67,4 +67,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Thanks
 
-Id like to thank the creators of [libgen.js](https://github.com/dunn/libgen.js/) and the author of [this](http://garbage.world/posts/libgen/) and of course the creators and maintainters of Library Genesis. They were all very helpfull in creating this gem.
+I'd like to thank the creators of [libgen.js](https://github.com/dunn/libgen.js/) and the author of [this](http://garbage.world/posts/libgen/) and of course the creators and maintainters of Library Genesis. They were all very helpfull in creating this gem.
