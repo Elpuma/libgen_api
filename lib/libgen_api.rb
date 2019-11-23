@@ -48,8 +48,8 @@ module LibgenApi
     def self.search(query, res, column)
         raise "query must be at least four characters long!" if query.length() < 4
 
-        if res != 10 && res != 25 && res != 100
-            raise "res must equal either 10, 25 or 100"
+        if res != 25 && res != 50 && res != 100
+            raise "res must equal either 25, 50 or 100"
         end
         
         id_collection = []
