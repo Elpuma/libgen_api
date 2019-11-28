@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     libgen_api (0.1.0)
+      httparty
+      nokogiri
 
 GEM
   remote: https://rubygems.org/
