@@ -2,7 +2,7 @@
 
 Welcome to the `libgen_api` gem!
 
-This gem allows you to search library genesis easily and relatively quicky.
+This gem allows you to search library genesis easily and relatively quickly.
 
 ## Advice
 
@@ -88,4 +88,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Thanks
 
-I'd like to thank the creators of [libgen.js](https://github.com/dunn/libgen.js/) and the author of [this](http://garbage.world/posts/libgen/) and of course the creators and maintainters of Library Genesis. They were all very helpfull in creating this gem.
+I'd like to thank Alex Dunn the author of [this](http://garbage.world/posts/libgen/) and [libgen.js](https://github.com/dunn/libgen.js/), not to mention the creators and maintainers of Library Genesis. They were all very helpful in creating this gem.
