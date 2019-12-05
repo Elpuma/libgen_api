@@ -39,7 +39,7 @@ This method will return in order the id's of the books shown in your search resu
 Books can be retrieved using their ids.
 
 The method `get_book()` can be used to retrieve an individual books information where as the method `get_books()` can be used to retrieve multiple books.
-`get_book()` has two parameters, `id` and `fields`. `id` is any books id number whilst `fields` contains an array of which fields you are interested in looking at. A list of fields can be found [here](http://garbage.world/posts/libgen/). By default the `title`, `author` and `md5` fields are requested. It returns a hash with each selected field being a key that can be used to access its value.
+`get_book()` has two parameters, `id` and `fields`. `id` is any books id number whilst `fields` contains an array of which fields you are interested in looking at. A list of fields can be found [here](http://garbage.world/posts/libgen/) and [here](https://forum.mhut.org/viewtopic.php?f=17&t=6874). By default the `title`, `author` and `md5` fields are requested. It returns a hash with each selected field being a key that can be used to access its value.
 
 `get_books()` works basically the same excepts its first argument is `ids` which accepts an array of ids. It returns an array of hashes for each book requested.
 
